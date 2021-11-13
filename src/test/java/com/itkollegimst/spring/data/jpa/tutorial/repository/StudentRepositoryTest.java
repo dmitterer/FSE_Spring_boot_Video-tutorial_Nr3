@@ -62,4 +62,16 @@ class StudentRepositoryTest {
 
 
     }
+
+    @Test
+    public void printStudentByFirstName(){
+
+    List<Student> students =
+            studentRepository.findByFirstName("Franz");
+
+        System.out.println("students = " + students);
+
+
+
+    }
 }

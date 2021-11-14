@@ -34,7 +34,7 @@ public class Teacher {
     private String firstName;
     private String lastName;
 
-    @OneToMany(
+ /*   @OneToMany(
 
             cascade = CascadeType.ALL
 
@@ -46,5 +46,5 @@ public class Teacher {
 
 
     )
-    private  List<Course> courses;
+    private  List<Course> courses;*/
 }

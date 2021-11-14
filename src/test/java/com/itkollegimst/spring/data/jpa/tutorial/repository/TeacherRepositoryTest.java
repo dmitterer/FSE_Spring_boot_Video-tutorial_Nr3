@@ -33,7 +33,7 @@ class TeacherRepositoryTest {
                 Teacher.builder()
                         .firstName("Michael")
                         .lastName("Gamper")
-                        .courses((List.of(courseDBI, courseCOPR)))
+                       // .courses((List.of(courseDBI, courseCOPR)))
                         .build();
 
 

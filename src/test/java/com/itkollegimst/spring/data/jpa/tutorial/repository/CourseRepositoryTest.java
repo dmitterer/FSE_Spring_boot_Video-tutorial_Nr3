@@ -2,6 +2,7 @@ package com.itkollegimst.spring.data.jpa.tutorial.repository;
 
 
 import com.itkollegimst.spring.data.jpa.tutorial.entity.Course;
+import com.itkollegimst.spring.data.jpa.tutorial.entity.Student;
 import com.itkollegimst.spring.data.jpa.tutorial.entity.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -111,6 +112,36 @@ class CourseRepositoryTest {
 
 
             System.out.println("courses = " + courses);
+
+        }
+
+        @Test
+        public void saveCourseWithStudentAndTeacher(){
+
+        Teacher teacher = Teacher
+                .builder()
+                .firstName("Dominik")
+                .lastName("Moser")
+                .build();
+
+        Student student = Student
+                .builder()
+                .firstName("Josef")
+                .lastName("Müller")
+                .emailId("jose00mue@gmail.com")
+                .build();
+
+        Course course =  Course
+
+                .builder()
+                .title("NVS")
+                .credit(7)
+                .teacher(teacher)
+                .build();
+
+            course.addStudents(student);
+
+            courseRepository.save(course);
 
         }
 }
